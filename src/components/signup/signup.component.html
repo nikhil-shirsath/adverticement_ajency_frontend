@@ -1,66 +1,249 @@
 <p>signup works!</p>
-<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container shadow-lg p-3 mb-5 bg-body rounded ">
+  <div class="conatainer text-center">
+    <h1>Register</h1>
+  </div>
 
-<div class="text-center">
-    <h1>SignUp</h1>
-</div>
-<form class="row g-3">
+
+<form class="row g-3" [formGroup]="registerUser">
 
     <div class="col-md-6">
         <label for="formGroupExampleInput" class="form-label"> First Name</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter First Name">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter First Name" formControlName="userFirstName">
+      
+        <div class="text-danger">
+          @if( registerUser.controls['userFirstName'].touched && registerUser.controls['userFirstName'].errors?.['required']){
+            <span>This Field is required.</span>
+          }
+          @else if (registerUser.controls['userFirstName'].errors?.['minlength']) {
+            <span>Length must be greater then 3 .</span>
+
+          }
+          @else if (registerUser.controls['userFirstName'].errors?.['maxlength']) {
+            <span>Length must be less then 40 .</span>
+
+          }
+        </div>
+
       </div>
       <div class="col-md-6">
         <label for="formGroupExampleInput2" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Last Name">
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Last Name" formControlName="userLastName">
+      
+        <div class="text-danger">
+          @if( registerUser.controls['userLastName'].touched && registerUser.controls['userLastName'].errors?.['required']){
+            <span>This Field is required.</span>
+          }
+          @else if (registerUser.controls['userLastName'].errors?.['minlength']) {
+            <span>Length must be greater then 3 .</span>
+
+          }
+          @else if (registerUser.controls['userLastName'].errors?.['maxlength']) {
+            <span>Length must be less then 40 .</span>
+
+          }
+        </div>
+      
       </div>
 
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email id " formControlName="userEmail">
+    
+      <div class="text-danger">
+        @if( registerUser.controls['userEmail'].touched && registerUser.controls['userEmail'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userEmail'].errors?.['minlength']) {
+          <span>Email Length must be greater then 3 .</span>
+
+        }
+        @else if (registerUser.controls['userEmail'].errors?.['maxlength']) {
+          <span>Email Length must be less then 40 .</span>
+
+        }
+        @else if (registerUser.controls['userEmail'].errors?.['email']) {
+          <span>It must be Email .</span>
+
+        }
+      </div>
+    
+    
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
+      <label for="inputPassword4" class="form-label" >Password</label>
+      <input type="password" class="form-control" id="inputPassword4" formControlName="userPassword">
+    
+      <div class="text-danger">
+        @if( registerUser.controls['userPassword'].touched && registerUser.controls['userPassword'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userPassword'].errors?.['minlength']) {
+          <span>Length must be greater then 3 .</span>
+
+        }
+        @else if (registerUser.controls['userPassword'].errors?.['maxlength']) {
+          <span>Length must be less then 40 .</span>
+
+        }
+      </div>
+    
     </div>
     <div class="col-md-6">
-        <label for="inputPassword4" class="form-label"> Confirm Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <label for="inputPassword5" class="form-label"> Confirm Password</label>
+        <input type="password" class="form-control" id="inputPassword5" formControlName="userConfirmPassword">
+      
+        <div class="text-danger">
+          @if( registerUser.controls['userConfirmPassword'].touched && registerUser.controls['userConfirmPassword'].errors?.['required']){
+            <span>This Field is required.</span>
+          }
+          @else if (registerUser.controls['userConfirmPassword'].errors?.['minlength']) {
+            <span>Length must be greater then 3 .</span>
+  
+          }
+          @else if (registerUser.controls['userConfirmPassword'].errors?.['maxlength']) {
+            <span>Length must be less then 40 .</span>
+  
+          }
+        </div>
+        
+      
+      </div>
+   
+
+      <div class="col-md-6">
+        <label for="inputPassword6" class="form-label"> Mobile Number</label>
+        <input type="tel" class="form-control" id="inputPassword6" formControlName="userMobileNo">
+      
+        <div class="text-danger">
+          @if( registerUser.controls['userMobileNo'].touched && registerUser.controls['userMobileNo'].errors?.['required']){
+            <span>This Field is required.</span>
+          }
+          @else if (registerUser.controls['userMobileNo'].errors?.['minlength']) {
+            <span>Length must be  10 .</span>
+  
+          }
+          @else if (registerUser.controls['userMobileNo'].errors?.['maxlength']) {
+            <span>Length must be  10 .</span>
+  
+          }
+        </div>
+      
       </div>
     <div class="col-12">
+
       <label for="inputAddress" class="form-label">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="userAddress">
+    
+      <div class="text-danger">
+        @if( registerUser.controls['userAddress'].touched && registerUser.controls['userAddress'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userAddress'].errors?.['minlength']) {
+          <span>Length must be greater then 3 .</span>
+
+        }
+        @else if (registerUser.controls['userAddress'].errors?.['maxlength']) {
+          <span>Length must be less then 40 .</span>
+
+        }
+      </div>
+    
     </div>
-    <div class="col-12">
-      <label for="inputAddress2" class="form-label">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
+    
     <div class="col-md-6">
       <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <input type="text" class="form-control" id="inputCity" formControlName="userCity">
+    
+    
+      <div class="text-danger">
+        @if( registerUser.controls['userCity'].touched && registerUser.controls['userCity'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userCity'].errors?.['minlength']) {
+          <span>Length must be greater then 3 .</span>
+
+        }
+        @else if (registerUser.controls['userCity'].errors?.['maxlength']) {
+          <span>Length must be less then 40 .</span>
+
+        }
+      </div>
+    
     </div>
     <div class="col-md-4">
       <label for="inputState" class="form-label">State</label>
-      <select id="inputState" class="form-select">
-        <option selected>Choose...</option>
-        <option>...</option>
+      <select id="inputState" class="form-select" formControlName="userState">
+        @for(state of states ; track $index){
+          <option selected [value]="state">{{state}}</option>
+        }
+        
+       
       </select>
+
+
+      <div class="text-danger">
+        @if( registerUser.controls['userState'].touched && registerUser.controls['userState'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userState'].errors?.['minlength']) {
+          <span>Length must be greater then 3 .</span>
+
+        }
+        @else if (registerUser.controls['userState'].errors?.['maxlength']) {
+          <span>Length must be less then 40 .</span>
+
+        }
+      </div>
+
     </div>
     <div class="col-md-2">
       <label for="inputZip" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="text" class="form-control" id="inputZip" formControlName="userPinCode">
+    
+      <div class="text-danger">
+        @if( registerUser.controls['userPinCode'].touched && registerUser.controls['userPinCode'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userPinCode'].errors?.['minlength']) {
+          <span>Length must be greater then 3 .</span>
+
+        }
+        @else if (registerUser.controls['userPinCode'].errors?.['maxlength']) {
+          <span>Length must be less then 40 .</span>
+
+        }
+      </div>  
+    
     </div>
     <div class="col-12">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="userIsAcceptTerms">
         <label class="form-check-label" for="gridCheck">
           Check me out
         </label>
       </div>
+      <div class="text-danger">
+        @if( registerUser.controls['userIsAcceptTerms'].touched && registerUser.controls['userIsAcceptTerms'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userIsAcceptTerms'].errors?.['minlength']) {
+          <span>Length must be greater then 3 .</span>
+
+        }
+        @else if (registerUser.controls['userIsAcceptTerms'].errors?.['maxlength']) {
+          <span>Length must be less then 40 .</span>
+
+        }
+      </div>
+      
+
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="submit" class="btn btn-primary" (click)="onSignUp()">Sign Up</button>
     </div>
   </form>
 
 </div>
+
+<h1>{{signUpFormData|json}}</h1>
