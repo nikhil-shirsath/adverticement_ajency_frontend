@@ -1,1 +1,23 @@
 <p>about works!</p>
+<div class="container z-index-1 shadow-lg rounded border">
+    <div class="container row  p-5 ">
+        <h1 class="text-center">About Section</h1>
+        <div class="col-sm-6 col-md-12 p-3 text-right ">
+            {{aboutContent}}
+        </div>
+        <div class="col-sm-6 col-md-12 p-3">
+            @for(service of serviceContent ; track $index){
+                <p class="serviceHeadingstyle ">{{service.heading}}</p>
+                <ul >
+                    @for(serviceText of service.content; track $index){
+                        <li>{{serviceText}}</li>
+
+                    }
+            </ul>
+
+        } <!--end of outer control statement -->
+            
+        </div>
+
+        </div>
+</div>
