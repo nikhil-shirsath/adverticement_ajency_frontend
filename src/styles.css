@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/* Apply to the body tag */
+
+body {
+    /* Set the height and width to cover the whole viewport */
+    min-height: 100%;
+    margin: 0;
+    /* overflow: hidden; */
+
+    /* Gradient background animation */
+    background: linear-gradient(45deg, #7570c0, #4877ce, #3d56c5, #d535eb, #1523e6, #da3137);
+    background-size: 300% 300%;
+
+    /* Animation */
+    animation: gradientBackground 15s ease infinite;
+    margin-bottom: 10%;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

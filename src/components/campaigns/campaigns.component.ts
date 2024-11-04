@@ -9,4 +9,22 @@ import { Component } from '@angular/core';
 })
 export class CampaignsComponent {
 
+  campaigns :any[]=[
+    { 
+      name:'first',
+      description:'this is first campaign',
+      image:'assest/images/pic1.jpeg'
+    },
+    
+    {
+      name:'second',
+      description:'this is first campaign',
+      image:'assest/images/pic2.jpeg'
+    }, {
+      name:'third',
+      description:'this is first campaign',
+      image:'assest/images/pic3.jpeg'
+    },
+  ]
+
 }

@@ -1,10 +1,15 @@
 <p>campaigns works!</p>
-
-<div class="card" style="width: 18rem;">
-    <img src="assest/images/pic1.jpeg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+  @for (campaign of campaigns; track $index) {
+    <div class="card" style="width: 18rem;">
+      <img  [src]="campaign.image"  class="card-img-top" alt="{{campaign.name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{ campaign.name }}</h5>
+        <p class="card-text">{{ campaign.description }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
-  </div>
+  }
+
+</div>
+

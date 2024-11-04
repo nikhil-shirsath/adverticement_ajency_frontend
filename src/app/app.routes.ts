@@ -8,6 +8,7 @@ import { LoginComponent } from '../components/login/login.component';
 import { SignupComponent } from '../components/signup/signup.component';
 import { CampaignsComponent } from '../components/campaigns/campaigns.component';
 import { ForgatePasswordPageComponent } from '../components/forgate-password-page/forgate-password-page.component';
+import { EnquiryFormComponent } from '../components/enquiry-form/enquiry-form.component';
 
 export const routes: Routes = [
     {   
@@ -45,5 +46,9 @@ export const routes: Routes = [
     {   
         path:'forgatePasswordPage',
         component:ForgatePasswordPageComponent
+    },
+    {   
+        path:'enquiryForm',
+        component:EnquiryFormComponent
     },
 ];
