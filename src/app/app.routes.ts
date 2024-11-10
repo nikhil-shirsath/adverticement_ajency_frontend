@@ -9,6 +9,8 @@ import { SignupComponent } from '../components/signup/signup.component';
 import { CampaignsComponent } from '../components/campaigns/campaigns.component';
 import { ForgatePasswordPageComponent } from '../components/forgate-password-page/forgate-password-page.component';
 import { EnquiryFormComponent } from '../components/enquiry-form/enquiry-form.component';
+import { ViewEnquiryComponent } from '../components/view-enquiry/view-enquiry.component';
+import { PortfolioComponent1 } from '../components/portfolio/portfolio.component';
 
 export const routes: Routes = [
     {   
@@ -26,10 +28,6 @@ export const routes: Routes = [
     {   
         path:'our-service',
         component:OurServiceComponent
-    },
-    {   
-        path:'portfolio',
-        component:PortfolioComponent
     },
     {   
         path:'loginPage',
@@ -50,5 +48,13 @@ export const routes: Routes = [
     {   
         path:'enquiryForm',
         component:EnquiryFormComponent
+    },
+    {   
+        path:'viewEnquiry',
+        component:ViewEnquiryComponent
+    },
+    {   
+        path:'portfolio',
+        component:PortfolioComponent1
     },
 ];
