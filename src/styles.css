@@ -8,13 +8,17 @@ body {
     /* overflow: hidden; */
 
     /* Gradient background animation */
-    background: linear-gradient(45deg, #7570c0, #4877ce, #3d56c5, #d535eb, #1523e6, #da3137);
+    background: linear-gradient(45deg, #c5f3d6, #f5bfde, #f0ea94, #f8f8f8, #f0cb9a, #b9dbe9);
     background-size: 300% 300%;
 
     /* Animation */
     animation: gradientBackground 15s ease infinite;
     margin-bottom: 10%;
+    font-family: "Roboto", sans-serif;
+
 }
+
+
 
 /* Keyframes for gradient animation */
 @keyframes gradientBackground {

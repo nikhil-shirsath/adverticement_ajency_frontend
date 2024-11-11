@@ -146,3 +146,15 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+
+.rounded-image {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Ensure the height and width are equal for a perfect circle */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+  }
+  
+
+  .titleLine{
+    color: #ddd;
+  }

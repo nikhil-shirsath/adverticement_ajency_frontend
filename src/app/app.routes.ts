@@ -11,6 +11,7 @@ import { ForgatePasswordPageComponent } from '../components/forgate-password-pag
 import { EnquiryFormComponent } from '../components/enquiry-form/enquiry-form.component';
 import { ViewEnquiryComponent } from '../components/view-enquiry/view-enquiry.component';
 import { PortfolioComponent1 } from '../components/portfolio/portfolio.component';
+import { PartnersComponent } from '../components/partners/partners.component';
 
 export const routes: Routes = [
     {   
@@ -56,5 +57,9 @@ export const routes: Routes = [
     {   
         path:'portfolio',
         component:PortfolioComponent1
+    },
+    {   
+        path:'ourPartners',
+        component:PartnersComponent
     },
 ];
