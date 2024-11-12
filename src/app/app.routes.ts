@@ -16,6 +16,10 @@ import { ViewUsersComponent } from '../components/AdminPages/view-users/view-use
 
 export const routes: Routes = [
     {   
+        path:'',
+        component:HomeComponent
+    },
+    {   
         path:'home',
         component:HomeComponent
     },

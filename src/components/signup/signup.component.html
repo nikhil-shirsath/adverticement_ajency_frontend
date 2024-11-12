@@ -136,7 +136,7 @@
       </div>
    
 
-    
+<!--  
     <div class="col-12">
 
       <label for="inputAddress" class="form-label">Address</label>
@@ -178,11 +178,11 @@
       </div>
     
     </div>
-    <div class="col-md-4">
+   <div class="col-md-4">
       <label for="inputState" class="form-label">State</label>
       <select id="inputState" class="form-select" formControlName="userState">
         @for(state of states ; track $index){
-          <option selected [value]="state">{{locationInfo.region}}</option>
+          <option selected [value]="locationInfo.region">{{locationInfo.region}}</option>
         }
         
        
@@ -203,7 +203,7 @@
         }
       </div>
 
-    </div>
+    </div> 
     <div class="col-md-2">
       <label for="inputZip" class="form-label">Zip</label>
       <input type="text" class="form-control" id="inputZip" formControlName="userPinCode">
@@ -223,6 +223,9 @@
       </div>  
     
     </div>
+
+    -->
+
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="userIsAcceptTerms">
