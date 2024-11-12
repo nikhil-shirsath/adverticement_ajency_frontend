@@ -1,30 +1,31 @@
-import { Component } from '@angular/core';
+import { CurrencyPipe, DatePipe } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-campaigns',
   standalone: true,
-  imports: [],
+  imports: [HttpClientModule,CurrencyPipe,DatePipe],
   templateUrl: './campaigns.component.html',
   styleUrl: './campaigns.component.css'
 })
-export class CampaignsComponent {
+export class CampaignsComponent implements OnInit{
 
-  campaigns :any[]=[
-    { 
-      name:'first',
-      description:'this is first campaign',
-      image:'assest/images/pic1.jpeg'
-    },
-    
-    {
-      name:'second',
-      description:'this is first campaign',
-      image:'assest/images/pic2.jpeg'
-    }, {
-      name:'third',
-      description:'this is first campaign',
-      image:'assest/images/pic3.jpeg'
-    },
-  ]
+  campaignsList :any[]=[]
+  constructor(private http: HttpClient){
+
+  }
+
+  ngOnInit(){
+    this.getAllCampaigns();
+  }
+  getAllCampaigns(){
+    this.http.get("http://localhost:8080/api/campaign/campaigns").subscribe((res:any)=>{
+      debugger;
+      this.campaignsList=res;
+      console.log(res);
+
+    })
+  }
 
 }

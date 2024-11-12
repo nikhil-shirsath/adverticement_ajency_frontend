@@ -1,4 +1,7 @@
 <p>signup works!</p>
+<h1>{{locationInfo?.city}}</h1>
+<h1>{{locationInfo?.region}}</h1>
+<h1>{{locationInfo?.country_name}}</h1>
 <div class="container shadow-lg p-5 mb-5 bg-body rounded ">
   <div class="conatainer text-center">
     <h1>Register</h1>
@@ -70,6 +73,28 @@
     
     
     </div>
+
+
+    <div class="col-md-6">
+      <label for="inputPassword6" class="form-label"> Mobile Number</label>
+      <input type="tel" class="form-control" id="inputPassword6" formControlName="userMobileNo" placeholder="{{locationInfo?.country_calling_code}}">
+    
+      <div class="text-danger">
+        @if( registerUser.controls['userMobileNo'].touched && registerUser.controls['userMobileNo'].errors?.['required']){
+          <span>This Field is required.</span>
+        }
+        @else if (registerUser.controls['userMobileNo'].errors?.['minlength']) {
+          <span>Length must be  10 .</span>
+
+        }
+        @else if (registerUser.controls['userMobileNo'].errors?.['maxlength']) {
+          <span>Length must be  10 .</span>
+
+        }
+      </div>
+    
+    </div>
+
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label" >Password</label>
       <input type="password" class="form-control" id="inputPassword4" formControlName="userPassword">
@@ -111,25 +136,7 @@
       </div>
    
 
-      <div class="col-md-6">
-        <label for="inputPassword6" class="form-label"> Mobile Number</label>
-        <input type="tel" class="form-control" id="inputPassword6" formControlName="userMobileNo">
-      
-        <div class="text-danger">
-          @if( registerUser.controls['userMobileNo'].touched && registerUser.controls['userMobileNo'].errors?.['required']){
-            <span>This Field is required.</span>
-          }
-          @else if (registerUser.controls['userMobileNo'].errors?.['minlength']) {
-            <span>Length must be  10 .</span>
-  
-          }
-          @else if (registerUser.controls['userMobileNo'].errors?.['maxlength']) {
-            <span>Length must be  10 .</span>
-  
-          }
-        </div>
-      
-      </div>
+    
     <div class="col-12">
 
       <label for="inputAddress" class="form-label">Address</label>
@@ -175,7 +182,7 @@
       <label for="inputState" class="form-label">State</label>
       <select id="inputState" class="form-select" formControlName="userState">
         @for(state of states ; track $index){
-          <option selected [value]="state">{{state}}</option>
+          <option selected [value]="state">{{locationInfo.region}}</option>
         }
         
        

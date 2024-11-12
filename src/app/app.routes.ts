@@ -12,6 +12,7 @@ import { EnquiryFormComponent } from '../components/enquiry-form/enquiry-form.co
 import { ViewEnquiryComponent } from '../components/view-enquiry/view-enquiry.component';
 import { PortfolioComponent1 } from '../components/portfolio/portfolio.component';
 import { PartnersComponent } from '../components/partners/partners.component';
+import { ViewUsersComponent } from '../components/AdminPages/view-users/view-users.component';
 
 export const routes: Routes = [
     {   
@@ -50,10 +51,7 @@ export const routes: Routes = [
         path:'enquiryForm',
         component:EnquiryFormComponent
     },
-    {   
-        path:'viewEnquiry',
-        component:ViewEnquiryComponent
-    },
+   
     {   
         path:'portfolio',
         component:PortfolioComponent1
@@ -61,5 +59,12 @@ export const routes: Routes = [
     {   
         path:'ourPartners',
         component:PartnersComponent
+    },
+    {   
+        path:'viewEnquiry',
+        component:ViewEnquiryComponent
+    }, {   
+        path:'viewUsers',
+        component:ViewUsersComponent
     },
 ];

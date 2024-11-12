@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EnquiryService } from '../../services/enquiry.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
@@ -7,23 +7,27 @@ import { DatePipe } from '@angular/common';
   selector: 'app-view-enquiry',
   standalone: true,
   imports: [HttpClientModule,DatePipe],
+  providers:[EnquiryService],
   templateUrl: './view-enquiry.component.html',
   styleUrl: './view-enquiry.component.css'
 })
-export class ViewEnquiryComponent {
+export class ViewEnquiryComponent implements OnInit{
 
 
-  enquiryList:any[]=[];
+  inquiryList:any[]=[];
 
-  constructor(private http:HttpClient){
+  constructor(private inquiryService:EnquiryService){
 
   }
+  ngOnInit(): void {
+      this.getAllInquiries();
+  }
 
-  onCall(){
-    this.http.get("http://localhost:8080/enquiry/getall/enquiries").subscribe((res:any)=>{
-      this.enquiryList=res;
+  getAllInquiries(){
+    this.inquiryService.getAllEnquiries().subscribe((res:any)=>{
+      this.inquiryList=res;
       console.log(res);
-      console.log(this.enquiryList);
+      console.log(this.inquiryList);
     })
   }
 }

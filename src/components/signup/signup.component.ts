@@ -1,16 +1,21 @@
 import { JsonPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LocationService } from '../../services/location.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule,JsonPipe],
+  imports: [ReactiveFormsModule,JsonPipe,HttpClientModule],
+  providers:[LocationService],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   
+  locationInfo:any;
   states:string[]=['maharashtra','goa','mp','chattisgadh'];
   registerUser:FormGroup= new FormGroup(
     {
@@ -31,10 +36,21 @@ export class SignupComponent {
 
   signUpFormData :any;
 
+  constructor(private locationService: LocationService){
+
+  }
+  ngOnInit(): void {
+      this.locationService.getlocation().subscribe((res:any)=>{
+        this.locationInfo= res;
+        console.log(res);
+      })
+  }
+
   onSignUp(){
     this.signUpFormData = this.registerUser.value;
     console.log(this.signUpFormData);
   }
 
+  
 
 }

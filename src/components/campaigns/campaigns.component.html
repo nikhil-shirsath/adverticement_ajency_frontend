@@ -1,11 +1,14 @@
 <p>campaigns works!</p>
 <div class="container">
-  @for (campaign of campaigns; track $index) {
+  @for (campaign of campaignsList; track $index) {
     <div class="card" style="width: 18rem;">
       <img  [src]="campaign.image"  class="card-img-top" alt="{{campaign.name}}">
       <div class="card-body">
-        <h5 class="card-title">{{ campaign.name }}</h5>
-        <p class="card-text">{{ campaign.description }}</p>
+        <h5 class="card-title">{{ campaign.campaign_name }}</h5>
+        <p class="card-text">Description {{ campaign.campaign_description }}</p>
+        <p class="card-text">Start Date{{ campaign.campaign_start_date | date:'dd/MM/yyyy' }}</p>
+        <p class="card-text">End date{{ campaign.campaign_end_date | date:'dd/MM/yyyy' }}</p>
+        <p class="card-text">price{{ campaign.campaign_budget | currency:'INR'}}</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>

@@ -1,6 +1,5 @@
 <p>view-enquiry works!</p>
 
-<button (click)="onCall()">Show table </button>
 
 <table>
     <thead>
@@ -16,14 +15,14 @@
     </thead>
 
     <tbody>
-        @for(enquiry of enquiryList ; track $index){
+        @for(enquiry of inquiryList ; track $index){
             <tr>
                 <td>{{$index+1}}</td>
                 <td>{{enquiry.enquiryId}}</td>
                 <td>{{enquiry.enquiryEmailId}}</td>
                 <td>{{enquiry.enquiryMobNo}}</td>
                 <td>{{enquiry.enquiryMessage}}</td>
-                <td>{{enquiry.submittedTime|date}}</td>
+                <td>{{enquiry.submittedTime|date:'dd/MM/yyyy'}}</td>
             </tr>
         }
         
