@@ -11,7 +11,18 @@ import { UsersService } from '../../../services/users.service';
   styleUrl: './view-users.component.css'
 })
 export class ViewUsersComponent implements OnInit{
-  UserList:any[]=[];
+   user:any={
+    userFirstName:"",
+    userLastName:"",
+    userEmail:"",
+    userPassword:"",
+    userConfirmPassword:"",
+    userMobileNo:"",
+    userCity:"",
+    userState:"",
+    userCountry:""
+  }
+  UserList: any[] =[];
   constructor(private userService : UsersService){
 
   }

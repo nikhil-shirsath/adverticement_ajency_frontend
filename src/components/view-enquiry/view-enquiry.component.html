@@ -1,30 +1,54 @@
 <p>view-enquiry works!</p>
 
-
-<table>
-    <thead>
-        <tr>
-            <th>Sr No </th>
-            <th>Inquiry Id</th>
-            <th>Email Id</th>
-            <th>Mobile No </th>
-            <th>Enquiry</th>
-            <th>Time</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @for(enquiry of inquiryList ; track $index){
+    <table class="table table-hover">
+        <thead>
             <tr>
-                <td>{{$index+1}}</td>
-                <td>{{enquiry.enquiryId}}</td>
-                <td>{{enquiry.enquiryEmailId}}</td>
-                <td>{{enquiry.enquiryMobNo}}</td>
-                <td>{{enquiry.enquiryMessage}}</td>
-                <td>{{enquiry.submittedTime|date:'dd/MM/yyyy'}}</td>
+                <th>Sr No </th>
+                <th>Inquiry Id </th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Id</th>
+                <th>Mobile No </th>
+                <th>Enquiry Message</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Inquiry Date</th>
+                <th>Status</th>
             </tr>
-        }
-        
-    </tbody>
-</table>
+        </thead>
+    
+        <tbody>
+            @for(enquiry of inquiryList ; track $index){
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{enquiry.inquiryId}}</td>
+                    <td>{{enquiry.userFirstName}}</td>
+                    <td>{{enquiry.userLastName}}</td>
+                    <td>{{enquiry.userEmail}}</td>
+                    <td>{{enquiry.userMobileNo}}</td>
+                    <td>{{enquiry.inquiryMessage}}</td>
+                    <td>{{enquiry.userCity}}</td>
+                    <td>{{enquiry.userState}}</td>
+    
+                    <td>{{enquiry.userCountry}}</td>
+                    <td>{{enquiry.submittedTime|date:'dd/MM/yyyy'}}</td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+
+
+
+<!-- {
+    "userFirstName": "Disha",
+    "userLastName": "Shelar",
+    "userEmail": "disha@gmail.com",
+    "userMobileNo": "9111589140",
+    "inquiryMessage": "send me quotations",
+    "userCity": "Surat",
+    "userCountry": "India",
+    "userState": "Gujarat"
+  } -->
+  

@@ -7,8 +7,14 @@
         <tr>
             <th>Sr No </th>
             <th>User Id</th>
-            <th>Name</th>
-            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Mobile No</th>
+            <th>City</th>
+            <th>State</th> 
+            <th>Country</th>
+           
         </tr>
     </thead>
 
@@ -17,10 +23,16 @@
             <tr>
                 <td>{{$index+1}}</td>
                 <td>{{user.userId}}</td>
-                <td>{{user.userFullName}}</td>
+                <td>{{user.userFirstName}}</td>
+                <td>{{user.userLastName}}</td>
                 <td>{{user.userEmail}}</td>
+                <td>{{user.userMobileNo}}</td>
+                <td>{{user.userCity}}</td> 
+                <td>{{user.userState}}</td>
+                <td>{{user.userCountry}}</td>
             </tr>
         }
         
     </tbody>
 </table>
+

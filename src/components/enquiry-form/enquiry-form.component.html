@@ -3,7 +3,7 @@
   <div class="conatainer text-center">
     <h1>Enquiry</h1>
   </div>
-
+<h1>{{signUpFormData|json}}</h1>
 
 <form class="row g-3" [formGroup]="registerUser">
 
@@ -94,17 +94,17 @@
     <div class="col-12">
 
       <label for="inputAddress" class="form-label">Question</label>
-      <input type="textbox" class="form-control questionField" id="inputAddress"  placeholder="Ask Query" formControlName="userAddress">
+      <input type="textbox" class="form-control questionField" id="inputAddress"  placeholder="Ask Query" formControlName="inquiryMessage">
     
       <div class="text-danger">
-        @if( registerUser.controls['userAddress'].touched && registerUser.controls['userAddress'].errors?.['required']){
+        @if( registerUser.controls['inquiryMessage'].touched && registerUser.controls['inquiryMessage'].errors?.['required']){
           <span>This Field is required.</span>
         }
-        @else if (registerUser.controls['userAddress'].errors?.['minlength']) {
+        @else if (registerUser.controls['inquiryMessage'].errors?.['minlength']) {
           <span>Length must be greater then 3 .</span>
 
         }
-        @else if (registerUser.controls['userAddress'].errors?.['maxlength']) {
+        @else if (registerUser.controls['inquiryMessage'].errors?.['maxlength']) {
           <span>Length must be less then 40 .</span>
 
         }
@@ -113,7 +113,7 @@
     </div>
 
     
-    
+<!--
     <div class="col-md-6">
       <label for="inputCity" class="form-label">City</label>
       <input type="text" class="form-control" id="inputCity" formControlName="userCity">
@@ -179,6 +179,9 @@
       </div>  
     
     </div>
+
+
+ 
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="userIsAcceptTerms">
@@ -202,6 +205,8 @@
       
 
     </div>
+
+   -->
     <div class="col-12">
       <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
     </div>
